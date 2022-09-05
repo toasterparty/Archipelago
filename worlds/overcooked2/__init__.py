@@ -131,9 +131,8 @@ class Overcooked2World(World):
         # if level_id is none, then it's the 6-6 edge case
         if level_id is None:
             level_id = 36
-        if self.level_mapping:
-            if level_id in self.level_mapping:
-                level = self.level_mapping[level_id]
+        if self.level_mapping is not None and level_id in self.level_mapping:
+            level = self.level_mapping[level_id]
         else:
             level = Overcooked2GenericLevel(level_id)
 
